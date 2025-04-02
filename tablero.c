@@ -2,19 +2,16 @@
 #include <stdlib.h>
 #include "tablero.h"
 
-// Función para crear un nuevo tablero
 Tablero* crear_tablero(int tamano) {
     Tablero* tablero = NULL;
     int i, j;
     
-    // Reservar memoria para la estructura del tablero
     tablero = (Tablero*)malloc(sizeof(Tablero));
     if (!tablero) {
         fprintf(stderr, "Error al reservar memoria para el tablero\n");
         return NULL;
     }
     
-    // Inicializar tamaño y reservar matriz de casillas
     tablero->tamano = tamano;
     tablero->casillas = (char**)malloc(tamano * sizeof(char*));
     if (!tablero->casillas) {
@@ -23,7 +20,7 @@ Tablero* crear_tablero(int tamano) {
         return NULL;
     }
     
-    // Reservar cada fila de la matriz
+ 
     for (i = 0; i < tamano; i++) {
         tablero->casillas[i] = (char*)malloc(tamano * sizeof(char));
         if (!tablero->casillas[i]) {
@@ -41,7 +38,6 @@ Tablero* crear_tablero(int tamano) {
     return tablero;
 }
 
-// Función para inicializar todas las casillas del tablero como vacías
 void inicializar_tablero(Tablero* tablero) {
     int i, j;
     for (i = 0; i < tablero->tamano; i++) {
@@ -51,7 +47,6 @@ void inicializar_tablero(Tablero* tablero) {
     }
 }
 
-// Función para liberar toda la memoria utilizada por el tablero
 void liberar_tablero(Tablero* tablero) {
     int i;
     if (tablero != NULL) {
