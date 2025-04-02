@@ -24,7 +24,6 @@ Tablero* crear_tablero(int tamano) {
     for (i = 0; i < tamano; i++) {
         tablero->casillas[i] = (char*)malloc(tamano * sizeof(char));
         if (!tablero->casillas[i]) {
-            // Liberar memoria previamente asignada en caso de error
             for (j = 0; j < i; j++) {
                 free(tablero->casillas[j]);
             }
