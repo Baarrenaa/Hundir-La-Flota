@@ -1,7 +1,20 @@
-#ifndef TABLEROS_H_INCLUDED
-#define TABLEROS_H_INCLUDED
+#ifndef TABLERO_H
+#define TABLERO_H
 
-Tablero* crear_tablero(int tamano);
-void mostrar_tablero(Tablero* tab);
+typedef enum {
+    VACIO,
+    AGUA,
+    TOCADO,
+    HUNDIDO
+} EstadoCasilla;
 
-#endif // TABLEROS_H_INCLUDED
+typedef struct {
+    int n;
+    EstadoCasilla* casillas;
+    Barco* barcos;
+} Tablero;
+
+Tablero* crear_tablero(int n);
+void liberar_tablero(Tablero* tablero);
+
+#endif
