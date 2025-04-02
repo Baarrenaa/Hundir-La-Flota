@@ -1,14 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <tablero.h>
+#include "configuracion.h"
+#include "disparos.h"
+#include "interfaz.h"
 
 int main() {
+    Configuracion* config = cargar_configuracion("config.txt");
+    if (!config) {
+        fprintf(stderr, "Error al cargar la configuración\n");
+        return 1;
+    }
 
-    Tablero* tableroj1 = crear_tablero(tamano);
-    Tablero* tableroj2 = crear_tablero(tamano);
-    mostrar_tablero(tableroj1);
-    mostrar_tablero(tableroj2);
+    int opcion;
+    do {
+        mostrar_menu_principal();
+        scanf("%d", &opcion);
+        
+        switch(opcion) {
+            case 1:
+                // Menú de configuración
+                break;
+            case 2:
+                // Iniciar juego
+                break;
+        }
+    } while(opcion != 3);
 
-
+    liberar_configuracion(config);
     return 0;
 }
