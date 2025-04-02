@@ -1,7 +1,7 @@
 #ifndef BARCOS_H
 #define BARCOS_H
 
-#include <archivos.h>
+#include "archivos.h"
 
 typedef struct {
     Barco* tipos;
