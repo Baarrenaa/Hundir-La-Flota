@@ -76,7 +76,6 @@ int casillas_validas(Tablero* tablero, int fila, int columna) {
                                  {1,-1},  {1,0},  {1,1}};
     int i;
     
-    // Verificar la casilla central
     if (tablero->casillas[fila][columna] != ' ') {
         return 0;
     }
