@@ -8,8 +8,7 @@ int es_posicion_valida(int fila, int columna, int tamano_tablero) {
             columna >= 0 && columna < tamano_tablero);
 }
 
-int es_colocacion_barco_valida(Tablero* tablero, int fila, int columna, 
-                              int tamano, int orientacion) {
+int es_colocacion_barco_valida(Tablero* tablero, int fila, int columna, int tamano, int orientacion) {
     int i;
     
     if (!es_posicion_valida(fila, columna, tablero->tamano)) {
